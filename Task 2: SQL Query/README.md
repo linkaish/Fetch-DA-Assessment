@@ -1,4 +1,4 @@
-##Part A & B
+## Part A & B
 ```sql
 SELECT brandId, 
 	   name, 
@@ -14,4 +14,45 @@ INNER JOIN receipts r
 GROUP BY 1, 2
 ORDER BY recent_month_rnk
 LIMIT 5;
+```
+
+## Part C & D
+```sql
+SELECT AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN totalSpent ELSE 0 END) AS accepted_avg_spend,
+	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN totalSpent ELSE 0 END) AS rejected_avg_spend,
+       AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN purchasedItemCount ELSE 0 END) AS accepted_item_count,
+	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN purchasedItemCount ELSE 0 END) AS rejected_item_count
+FROM receipts;
+```
+
+## Part E
+```sql
+SELECT brandId, name
+FROM mydb.brands b
+INNER JOIN receiptItem ri
+	ON b.barcode = ri.barcode
+INNER JOIN receipts r
+	ON ri.receiptId = r.receiptId
+INNER JOIN users u
+	ON r.userId = u.userId
+WHERE u.createdDate >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+GROUP BY 1, 2
+ORDER BY SUM(ri.quantityPurchased * ri.finalPrice) DESC
+LIMIT 1;
+```
+
+## Part F
+```sql
+SELECT brandId, name
+FROM brands b
+INNER JOIN receiptItem ri
+	ON b.barcode = ri.barcode
+INNER JOIN receipts r
+	ON ri.receiptId = r.receiptId
+INNER JOIN users u
+	ON r.userId = u.userId
+WHERE u.createdDate >= DATE_SUB(CURDATE(), INTERVAL 6 MONTH)
+GROUP BY 1, 2
+ORDER BY COUNT(DISTINCT r.receiptId) DESC
+LIMIT 1;
 ```
