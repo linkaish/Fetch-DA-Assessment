@@ -1,7 +1,7 @@
 # Fetch-DA-Assessment
 
 ## Task 1: Structured Relational Data Model
-Below are two images showing how I structured this data model.
+Below are two images showing how I structured this data model. As different receipt items could contain different table columns according to their natures, I select a subset of features that are helpful to this assessment analysis.
 
 As shown in the second graph, **barcode** is the joinable key for tables **brands** and **receipt item** (one-to-many relationship; Note here in the image, it's shown as many-to-many relationship due to some data quality issues which I will explain in Task 3.); **receipt id** is the joinable key for tables **receipts** and **receipt item** (one-to-many relationship); **user id** is the joinable key for tables **receipts** and **users** (many-to-one relationship).
 
