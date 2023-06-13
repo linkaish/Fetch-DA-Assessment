@@ -10,4 +10,4 @@ As shown in the second graph, **barcode** is the joinable key for tables **brand
 
 
 ## Task 2: SQL Query
-a: [a link](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Task2%3A%20SQL%20Query/sql_a.txt)
+part A: [query](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Task2%3A%20SQL%20Query/sql_a.txt)
