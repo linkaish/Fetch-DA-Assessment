@@ -7,3 +7,7 @@ As shown in the second graph, **barcode** is the joinable key for tables **brand
 
 ![alt text](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Data%20Model.png)
 ![alt text](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Entity%20Relationship%20Diagram.jpg)
+
+
+## Task 2: SQL Query
+a: [a link](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Task2%3A%20SQL%20Query/sql_a.txt)
