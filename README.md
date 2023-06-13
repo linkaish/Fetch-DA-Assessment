@@ -14,6 +14,6 @@ As shown in the second graph, **barcode** is the joinable key for tables **brand
 
 
 ## Task 3: Data Quality Evaluation
-
+[Data Quality Eval](https://github.com/linkaish/Fetch-DA-Assessment/blob/main/Task%203%3A%20Data%20Quality%20Evaluation/Data%20Quality%20Issues.ipynb)
 
 ## Task 4: Communicate with Stakeholders
