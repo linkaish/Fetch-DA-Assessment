@@ -1,0 +1,10 @@
+SELECT brandId, name
+FROM brands b
+INNER JOIN receipt_item ri
+  ON b.barcode = ri.barcode
+INNER JOIN receipts r
+  ON r.receiptId = ri.receiptId
+WHERE r.dateScanned >= DATE_SUB(CURDATE(), INTERVAL 1 MONTH)
+GROUP BY 1, 2
+ORDER BY COUNT(DISTINCT r.receiptId) DESC
+LIMIT 5
