@@ -18,10 +18,10 @@ LIMIT 5;
 
 ## Part C & D
 ```sql
-SELECT AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN totalSpent ELSE 0 END) AS accepted_avg_spend,
-	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN totalSpent ELSE 0 END) AS rejected_avg_spend,
-       AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN purchasedItemCount ELSE 0 END) AS accepted_item_count,
-	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN purchasedItemCount ELSE 0 END) AS rejected_item_count
+SELECT AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN totalSpent END) AS accepted_avg_spend,
+	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN totalSpent END) AS rejected_avg_spend,
+       AVG(CASE WHEN rewardsReceiptStatus = "Finished" THEN purchasedItemCount END) AS accepted_item_count,
+	   AVG(CASE WHEN rewardsReceiptStatus = "Rejected" THEN purchasedItemCount END) AS rejected_item_count
 FROM receipts;
 ```
 
